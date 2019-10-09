@@ -10,9 +10,12 @@
 class for HAL PSU APIs
 
 API parameters convention:
+
 @param psu_name Name of a PSU, format: "PSU%d" % psu_index, where psu_index is
                 integer starting from 1
 """
+
+
 class HalPsu(object):
     def __init__(self):
         pass
@@ -60,6 +63,7 @@ class HalPsu(object):
                     "OutputStatus": True
                 }
         """
+        pass
 
     def get_power_status(self, psu_name):
         """
@@ -76,6 +80,7 @@ class HalPsu(object):
                             "Value": 220,
                             "LowAlarm": 200,
                             "HighAlarm": 240,
+                            "Unit": "V"
 
                             # Optional
                             "LowWarning": 210,
@@ -85,6 +90,7 @@ class HalPsu(object):
                             "Value": 6.0,
                             "LowAlarm": 0.2,
                             "HighAlarm": 7.0,
+                            "Unit": "A"
 
                             # Optional
                             "LowWarning": 0.3,
@@ -94,6 +100,7 @@ class HalPsu(object):
                             "Value": 1000,
                             "LowAlarm": 10,
                             "HighAlarm": 1400,
+                            "Unit": "W"
 
                             # Optional
                             "LowWarning": 20,
@@ -106,6 +113,7 @@ class HalPsu(object):
                             "Value": 220,
                             "LowAlarm": 200,
                             "HighAlarm": 240,
+                            "Unit": "V"
 
                             # Optional
                             "LowWarning": 210,
@@ -115,6 +123,7 @@ class HalPsu(object):
                             "Value": 6.0,
                             "LowAlarm": 0.2,
                             "HighAlarm": 7.0,
+                            "Unit": "A"
 
                             # Optional
                             "LowWarning": 0.3,
@@ -124,6 +133,7 @@ class HalPsu(object):
                             "Value": 1000,
                             "LowAlarm": 10,
                             "HighAlarm": 1400,
+                            "Unit": "W"
 
                             # Optional
                             "LowWarning": 20,
@@ -132,4 +142,4 @@ class HalPsu(object):
                     }
                 }
         """
-
+        pass

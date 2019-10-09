@@ -9,6 +9,8 @@
 """
 class for HAL Misc APIs.
 """
+
+
 class HalMisc(object):
     def __init__(self):
         pass
@@ -21,7 +23,7 @@ class HalMisc(object):
                 Example:
                 {
                     "Flash": "master",
-                    "Result": "sucess"
+                    "Result": "success"
                 }
         """
         pass
@@ -34,7 +36,7 @@ class HalMisc(object):
         """
         pass
 
-    def set_system_fan_led(self, color, blink):
+    def set_system_fan_led(self, color, blink=False):
         """
         Set system fan LED color
 
@@ -44,5 +46,3 @@ class HalMisc(object):
         @return 0 for success, -1 for failure
         """
         pass
-
-

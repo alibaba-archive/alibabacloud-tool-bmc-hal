@@ -10,6 +10,8 @@
 """
 class for HAL CPU APIs
 """
+
+
 class HalCPU(object):
     def __init__(self):
         pass

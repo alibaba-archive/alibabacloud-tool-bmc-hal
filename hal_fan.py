@@ -12,10 +12,12 @@ class for HAL Fan APIs
 
 API parameters convention:
 
-@param fan_name: Name of the specific fan, format: "FAN_%d" % (fan_index),
+@param fan_name: Name of the specific fan, format: "FAN%d" % (fan_index),
                  where fan_index is integer starting from 1
 @param rotor_index: Index of the specific  fan's rotor, integer starting from 1
 """
+
+
 class HalFan(object):
     def __init__(self):
         pass
@@ -67,7 +69,7 @@ class HalFan(object):
         """
         Set PWM for specific fan's specific rotor
 
-        @param PWM duty cycle, unit is 1%, -1 for failure
+        @param pwm duty cycle, unit is 1%, -1 for failure
 
         @return 0 for success, -1 for failure
         """
@@ -81,7 +83,7 @@ class HalFan(object):
         """
         pass
 
-    def set_led(self, fan_name, color, blink):
+    def set_led(self, fan_name, color, blink=False):
         """
         Set fan LED
 
@@ -89,16 +91,14 @@ class HalFan(object):
         @param blink True for blinking, False for steady
 
         @return 0 for success, -1 for failure
-
         """
-
-
+        pass
 
     def get_info(self, fan_name):
         """
         Get specific fan's information
 
-        @return dict for specific fan for success, None for failure
+        @return dict for specific fan on success, None for failure
                 Example return value(all keys are mandatory)
                 {
                     # Properties
@@ -106,18 +106,18 @@ class HalFan(object):
                     "SN": "serial_number_example",
                     "PN": "part_number_exampple",
                     "Present": "yes"
-                    "Motors": 2,
+                    "Rotors": 2,
                     "AirFlow": "F2B",
                     "SpeedMin": 2000,
                     "SpeedMax": 30000,
 
                     # Status, dynamic data
-                    "Motor1": {
+                    "Rotor1": {
                         "Running": "yes",
                         "HwAlarm": "no"
                         "Speed": 7000
                     },
-                    "Motor2": {
+                    "Rotor2": {
                         "Running": "yes",
                         "HwAlarm": "no"
                         "Speed": 8000
@@ -133,12 +133,12 @@ class HalFan(object):
         @return dict for specific fan for success, None for failure
                 Example return value(all keys are mandatory)
                 {
-                    "Motor1": {
+                    "Rotor1": {
                         "Running": "no",
                         "HwAlarm": "yes",
                         "speed": 0
                     },
-                    "Motor2": {
+                    "Rotor2": {
                         "Running": "yes",
                         "HwAlarm": "no",
                         "Speed": 6800
@@ -162,18 +162,18 @@ class HalFan(object):
                         "SN": "serial_number_example",
                         "PN": "part_number_exampple",
                         "Present": "yes"
-                        "Motors": 2,
+                        "Rotors": 2,
                         "AirFlow": "F2B",
                         "SpeedMin": 2000,
                         "SpeedMax": 30000,
 
                         # Status, dynamic data
-                        "Motor1": {
+                        "Rotor1": {
                             "Running": "yes",
                             "HwAlarm": "no"
                             "Speed": 7000
                         },
-                        "Motor2": {
+                        "Rotor2": {
                             "Running": "yes",
                             "HwAlarm": "no"
                             "Speed": 8000
@@ -185,18 +185,18 @@ class HalFan(object):
                         "SN": "serial_number_example",
                         "PN": "part_number_exampple",
                         "Present": "yes"
-                        "Motors": 2,
+                        "Rotors": 2,
                         "AirFlow": "F2B",
                         "SpeedMin": 2000,
                         "SpeedMax": 30000,
 
                         # Status, dynamic data
-                        "Motor1": {
+                        "Rotor1": {
                             "Running": "no",
                             "HwAlarm": "yes",
                             "Speed": 0
                         },
-                        "Motor2": {
+                        "Rotor2": {
                             "Running": "yes",
                             "HwAlarm": "no",
                             "Speed": 6800
@@ -205,4 +205,3 @@ class HalFan(object):
                 }
         """
         pass
-
