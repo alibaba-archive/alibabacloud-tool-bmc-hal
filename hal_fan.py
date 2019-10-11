@@ -57,7 +57,7 @@ class HalFan(object):
         """
         pass
 
-    def get_pwm(self, fan_name, rotor_index):
+    def get_speed_pwm(self, fan_name, rotor_index):
         """
         Get current PWM duty cycle for specific fan's specific rotor
 
@@ -65,7 +65,7 @@ class HalFan(object):
         """
         pass
 
-    def set_pwm(self, fan_name, rotor_index, pwm):
+    def set_speed_pwm(self, fan_name, rotor_index, pwm):
         """
         Set PWM for specific fan's specific rotor
 
@@ -83,6 +83,24 @@ class HalFan(object):
         """
         pass
 
+    def enable_watchdog(self, enable=True, timeout_sec=10):
+        """
+        Enable Fan watchdog
+
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def feed_watchdog(self, pwm):
+        """
+        Feed watchdog
+
+        @param pwm duty cycle, unit is 1%, -1 for failure
+
+        @return 0 for success, -1 for failure
+        """
+        pass
+
     def set_led(self, fan_name, color, blink=False):
         """
         Set fan LED
@@ -94,7 +112,15 @@ class HalFan(object):
         """
         pass
 
-    def get_info(self, fan_name):
+    def get_presence(self, fan_name):
+        """
+        Get a specific fan's presence status
+
+        @return True for present, False for not present or failure
+        """
+        pass
+
+    def get_fru_info(self, fan_name):
         """
         Get specific fan's information
 
@@ -103,25 +129,12 @@ class HalFan(object):
                 {
                     # Properties
                     "Name": "FAN1",
-                    "SN": "serial_number_example",
+                    "SN": "serial_number_example",  # 'N/A'
                     "PN": "part_number_exampple",
-                    "Present": "yes"
                     "Rotors": 2,
                     "AirFlow": "F2B",
                     "SpeedMin": 2000,
-                    "SpeedMax": 30000,
-
-                    # Status, dynamic data
-                    "Rotor1": {
-                        "Running": "yes",
-                        "HwAlarm": "no"
-                        "Speed": 7000
-                    },
-                    "Rotor2": {
-                        "Running": "yes",
-                        "HwAlarm": "no"
-                        "Speed": 8000
-                    }
+                    "SpeedMax": 30000
                 }
         """
         pass
@@ -155,7 +168,7 @@ class HalFan(object):
                 Example return value(all keys are mandatory)
                 {
                     "Number": 2,
-                    "Watchdog": "NORMAL",
+                    "WatchdogStatus": "Normal",  # "Abnormal"/"Failed"
                     "FAN1": {
                         # Properties
                         "Name": FAN1,
