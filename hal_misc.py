@@ -46,3 +46,33 @@ class HalMisc(object):
         @return 0 for success, -1 for failure
         """
         pass
+
+    def set_host_cpu_power(self, power_command):
+        """
+        Control host cpu power
+
+        @param power_command Control command of host CPU's power,
+                             should be "on"/"off"/"cycle"
+
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_host_cpu_power_status(self):
+        """
+        Get host cpu power status
+
+        @return Power status of CPU(and affiliates), value should be
+                "on"/"off", or "failed" for failure
+        """
+        pass
+
+    def set_location_led(self, cmd):
+        """
+        Set location LED admin status
+
+        @param cmd Control command, "on"/"off"
+
+        @return 0 for success, -1 for failure
+        """
+        pass
