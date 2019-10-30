@@ -20,9 +20,9 @@ class for HAL temperature APIs.
                  point number.
                  Example:
                  {
-                     "Value": 30.0,
-                     "Min": -10.0,
-                     "Max": 50.0
+                     "Value": 30.0,     # -99999.0
+                     "Min": -10.0,      # -99999.0
+                     "Max": 50.0        # -99999.0
                  }
 """
 

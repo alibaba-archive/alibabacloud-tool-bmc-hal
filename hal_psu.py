@@ -44,9 +44,9 @@ class HalPsu(object):
                 Example return value(all keys are mandatory)
                 {
                     "Name": "PSU1",
-                    "SN": "serial_number_example",
-                    "PN": "part_number_example",
-                    "AirFlow": "B2F",
+                    "SN": "serial_number_example",    # 'N/A'
+                    "PN": "part_number_example",      # 'N/A'
+                    "AirFlow": "B2F"                  # 'N/A'
                 }
         """
         pass
@@ -59,18 +59,18 @@ class HalPsu(object):
                 Example return value(all keys are mandatory)
                 {
                     "Name": "PSU1",
-                    "InputType": "DC",
+                    "InputType": "DC",    # "AC" or 'N/A'
                     "InputStatus": True,  # H/W status bit
                     "OutputStatus": True  # H/W status bit
                     "FanSpeed": {
-                        "Value": 4000,
-                        "Min": 2000,
-                        "Max": 10000,
+                        "Value": 4000,    # -99999
+                        "Min": 2000,      # -99999
+                        "Max": 10000      # -99999
                     },
                     "Temperature": {
-                        "Value": 40.0,
-                        "Min": -30.0,
-                        "Max": 50.0
+                        "Value": 40.0,    # -99999.0
+                        "Min": -30.0,     # -99999.0
+                        "Max": 50.0       # -99999.0
                     }
                 }
         """
@@ -86,23 +86,23 @@ class HalPsu(object):
                     "Name": "PSU1",
                     "Inputs": {
                         "Status": True, # H/W status bit
-                        "Type": "DC",   # or "AC"
+                        "Type": "DC",   # or "AC" or "N/A"
                         "Voltage": {
-                            "Value": 220,
-                            "LowAlarm": 200,
-                            "HighAlarm": 240,
+                            "Value": 220,       # -1
+                            "LowAlarm": 200,    # -1
+                            "HighAlarm": 240,   # -1
                             "Unit": "V"
                         },
                         "Current": {
-                            "Value": 6.0,
-                            "LowAlarm": 0.2,
-                            "HighAlarm": 7.0,
+                            "Value": 6.0,       # -99999.0
+                            "LowAlarm": 0.2,    # -99999.0
+                            "HighAlarm": 7.0,   # -99999.0
                             "Unit": "A"
                         },
                         "Power": {
-                            "Value": 1000,
-                            "LowAlarm": -1,
-                            "HighAlarm": 1400,
+                            "Value": 1000,      # -99999
+                            "LowAlarm": -1,     # -99999
+                            "HighAlarm": 1400,  # -99999
                             "Unit": "W"
                        }
                     },
@@ -149,9 +149,9 @@ class HalPsu(object):
                 {
                     "Number": 2,
                     "PSU1": {
-                        "SN": "serial_number_example",
-                        "PN": "part_number_example",
-                        "AirFlow": "F2B",
+                        "SN": "serial_number_example",  # 'N/A'
+                        "PN": "part_number_example",    # 'N/A'
+                        "AirFlow": "F2B",               # 'N/A'
 
                         "FanSpeed": {
                             "Value": 4000,

@@ -20,7 +20,7 @@ class HalCPU(object):
         """
         Get CPU current state.
 
-        @return 'S0', ..., 'S5', or None for failure
+        @return 'S0', ..., 'S5', or 'N/A' for failure
         """
         pass
 
@@ -31,8 +31,8 @@ class HalCPU(object):
         @return List of MCERR and IERR counts, or None for failure
                 Example:
                 {
-                    "MCErr": 0,
-                    "IErr": 0
+                    "MCErr": 0,         # -99999
+                    "IErr": 0           # -99999
                 }
         """
         pass
@@ -51,6 +51,6 @@ class HalCPU(object):
         """
         Get last CPU reset type, WARM/COLD.
 
-        @return Last CPU reset type, "WARM"/"COLD", None for failure
+        @return Last CPU reset type, "WARM"/"COLD", "N/A" for failure
         """
         pass

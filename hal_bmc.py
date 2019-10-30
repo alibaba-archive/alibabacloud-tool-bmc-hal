@@ -22,17 +22,28 @@ class HalBmc(object):
 
         @return dict of BMC info or None for failure
                 {
-                    "Version": "1.1.1",
-                    "Flash": "master",
-                    "Next": "master"
+                    "Version": "1.1.1", # "N/A"
+                    "Flash": "master",  # "N/A"
+                    "Next": "master"    # "N/A"
                 }
         """
+
+    def get_version_all(self):
+        """
+        @return dict of BMCs
+                {
+                    "MasterVersion": "1.1.1",   # "N/A"
+                    "SlaveVersion": "1.1.1"     # "N/A"
+                }
+        """
+        pass
 
     def get_status(self):
         """
         Get BMC system status
 
         @return dict of system status or None for failure
+                # "N/A" for invalid outpouts
                 {
                     "CPU": {
                         "StateOutputs": "output of command 'top -bn 1'"
@@ -54,7 +65,7 @@ class HalBmc(object):
         """
         Get next booting flash of BMC
 
-        @return 'master'/'slave' on success, "Failed" for failure
+        @return 'master'/'slave' on success, "N/A" for failure
         """
         pass
 
@@ -71,7 +82,5 @@ class HalBmc(object):
     def reboot(self):
         """
         Reboot running BMC
-
-        @return 0 for success, -1 for failure
         """
         pass

@@ -79,7 +79,7 @@ class HalFan(object):
         """
         Get Fan watchdog status.
 
-        @return 'Normal'/'Abnormal'/'Failed' for status good/bad/read-failed.
+        @return 'Normal'/'Abnormal'/'N/A' for status good/bad/read-failed.
         """
         pass
 
@@ -130,11 +130,11 @@ class HalFan(object):
                     # Properties
                     "Name": "FAN1",
                     "SN": "serial_number_example",  # 'N/A'
-                    "PN": "part_number_exampple",
-                    "Rotors": 2,
-                    "AirFlow": "F2B",
-                    "SpeedMin": 2000,
-                    "SpeedMax": 30000
+                    "PN": "part_number_exampple",   # 'N/A'
+                    "Rotors": 2,                    # -1
+                    "AirFlow": "F2B",               # 'N/A'
+                    "SpeedMin": 2000,               # -1
+                    "SpeedMax": 30000               # -1
                 }
         """
         pass
@@ -147,9 +147,9 @@ class HalFan(object):
                 Example return value(all keys are mandatory)
                 {
                     "Rotor1": {
-                        "Running": "no",
-                        "HwAlarm": "yes",
-                        "speed": 0
+                        "Running": "no",        # 'N/A'
+                        "HwAlarm": "yes",       # 'N/A'
+                        "speed": 0              # -1
                     },
                     "Rotor2": {
                         "Running": "yes",
@@ -167,24 +167,24 @@ class HalFan(object):
         @return dict of all system fans' infor for success, None for failure
                 Example return value(all keys are mandatory)
                 {
-                    "Number": 2,
-                    "WatchdogStatus": "Normal",  # "Abnormal"/"Failed"
+                    "Number": 2,                 # -1
+                    "WatchdogStatus": "Normal",  # "Abnormal"/"N/A"
                     "FAN1": {
                         # Properties
                         "Name": FAN1,
-                        "SN": "serial_number_example",
-                        "PN": "part_number_exampple",
-                        "Present": "yes"
-                        "Rotors": 2,
-                        "AirFlow": "F2B",
-                        "SpeedMin": 2000,
-                        "SpeedMax": 30000,
+                        "SN": "serial_number_example",  # 'N/A'
+                        "PN": "part_number_exampple",   # 'N/A'
+                        "Present": "yes",               # 'N/A'
+                        "Rotors": 2,                    # -1
+                        "AirFlow": "F2B",               # 'N/A'
+                        "SpeedMin": 2000,               # -1
+                        "SpeedMax": 30000,              # -1
 
                         # Status, dynamic data
                         "Rotor1": {
-                            "Running": "yes",
-                            "HwAlarm": "no"
-                            "Speed": 7000
+                            "Running": "yes",           # 'N/A'
+                            "HwAlarm": "no",            # 'N/A'
+                            "Speed": 7000               # -1
                         },
                         "Rotor2": {
                             "Running": "yes",

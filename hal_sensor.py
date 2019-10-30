@@ -17,10 +17,10 @@ class for HAL sensor APIs.
 @param sensor_dict: Dict of sensor value
                     Example:
                     {
-                        "Value": 30.0,
-                        "Min": -10.0,
-                        "Max": 50.0
-                        "Unit": "C"
+                        "Value": 30.0,      # -99999.0
+                        "Min": -10.0,       # -99999.0
+                        "Max": 50.0,        # -99999.0
+                        "Unit": "C"         # "N/A"
                     }
 @param name Name of a specific sensor
 """
@@ -69,5 +69,19 @@ class HalSensor(object):
         Get a specific sensor's info
 
         @return sensor_dict or None for failure
+        """
+        pass
+
+    def get_sensor_info(self):
+        """
+        @return dict of sensors' information
+                {
+                    "SensorName1": {
+                        "Value": 1.0,       # -99999.0
+                        "Min": 0.0,         # -99999.0
+                        "Max": 2.0,         # -99999.0
+                        "Unit": "C"         # "N/A"
+                    }
+                }
         """
         pass

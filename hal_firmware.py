@@ -30,7 +30,7 @@ class HalFirmware(object):
         """
         Get next booting flash of BIOS
 
-        @return "master"/"slave" on success, "Failed" for failure
+        @return "master"/"slave" on success, "N/A" for failure
         """
         pass
 

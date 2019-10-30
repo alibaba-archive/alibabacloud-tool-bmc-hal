@@ -22,17 +22,18 @@ class HalMisc(object):
         @return Dict of BIOS boot status or None for failure
                 Example:
                 {
-                    "Flash": "master",
-                    "Result": "success"
+                    "Flash": "master",      # "slave" or 'N/A'
+                    "Result": "success"     # "failed" or 'N/A'
                 }
         """
         pass
 
     def get_bmc_boot_status(self):
         """
-        Get BMC last boot status
+        Get BMC latest boot status
 
         @return "master"/"slave" for boot successfully from master/slave flash
+                "N/A" for read failed
         """
         pass
 
@@ -52,7 +53,7 @@ class HalMisc(object):
         Control host cpu power
 
         @param power_command Control command of host CPU's power,
-                             should be "on"/"off"/"cycle"
+                             should be "on"/"off"/"cycle"/"reset"
 
         @return 0 for success, -1 for failure
         """
@@ -63,7 +64,7 @@ class HalMisc(object):
         Get host cpu power status
 
         @return Power status of CPU(and affiliates), value should be
-                "on"/"off", or "failed" for failure
+                "on"/"off", or "N/A" for failure
         """
         pass
 
@@ -74,5 +75,21 @@ class HalMisc(object):
         @param cmd Control command, "on"/"off"
 
         @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_location_led(self):
+        """
+        Get location LED admin status
+
+        @return status of location LED, "on"/"off" or "N/A" for failure
+        """
+        pass
+
+    def get_system_airflow(self):
+        """
+        Get system air flow.
+
+        @return "F2B"/"B2F" on success, "N/A" for failure
         """
         pass
