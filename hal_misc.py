@@ -93,3 +93,19 @@ class HalMisc(object):
         @return "F2B"/"B2F" on success, "N/A" for failure
         """
         pass
+
+    def get_cpld_user_reg(self):
+        """
+        Get user register value, 1 byte value
+
+        @return unsigned value, 1 byte, None for failure
+        """
+        pass
+
+    def set_cpld_user_reg(self, value):
+        """
+        Set user register value, 1 byte
+
+        @return 0 for success, -1 for failure
+        """
+        pass

@@ -69,7 +69,7 @@ class HalBmc(object):
         """
         pass
 
-    def set_next_boot(self):
+    def set_next_boot(self, flash):
         """
         Set flash from which next BMC boot
 
