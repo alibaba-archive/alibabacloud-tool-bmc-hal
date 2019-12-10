@@ -109,3 +109,34 @@ class HalMisc(object):
         @return 0 for success, -1 for failure
         """
         pass
+
+    def set_console_owner(self, owner):
+        """
+        Set console I/O owner
+
+        @param owner I/O owner of the console, either "cpu" or "bmc"
+
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_cpld_version(self):
+        """
+        Get version of CPLDs' that can be read from BMC
+
+        @return dict of CPLDs' version or None for failure.
+                example outputs:
+                {
+                    "BASE_CPLD": "0.1",     # or "N/A" for read failure
+                    "FAN_CPLD": "0.2"
+                }
+        """
+        pass
+
+    def get_platform_name(self):
+        """
+        Get platform name
+
+        @return platform name string, e.g. AS13-32H-F-$(VENDOR_NAME)
+        """
+        pass

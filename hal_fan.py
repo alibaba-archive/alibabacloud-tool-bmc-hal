@@ -167,7 +167,7 @@ class HalFan(object):
         @return dict of all system fans' infor for success, None for failure
                 Example return value(all keys are mandatory)
                 {
-                    "Number": 2,                 # -1
+                    "Number": 2,                 # -99999
                     "WatchdogStatus": "Normal",  # "Abnormal"/"N/A"
                     "FAN1": {
                         # Properties
@@ -175,21 +175,23 @@ class HalFan(object):
                         "SN": "serial_number_example",  # 'N/A'
                         "PN": "part_number_exampple",   # 'N/A'
                         "Present": "yes",               # 'N/A'
-                        "Rotors": 2,                    # -1
+                        "Rotors": 2,                    # -99999
                         "AirFlow": "F2B",               # 'N/A'
-                        "SpeedMin": 2000,               # -1
-                        "SpeedMax": 30000,              # -1
 
                         # Status, dynamic data
                         "Rotor1": {
                             "Running": "yes",           # 'N/A'
                             "HwAlarm": "no",            # 'N/A'
-                            "Speed": 7000               # -1
+                            "Speed": 7000               # -99999
+                            "SpeedMin": 2000,           # -99999
+                            "SpeedMax": 30000,          # -99999
                         },
                         "Rotor2": {
                             "Running": "yes",
                             "HwAlarm": "no"
                             "Speed": 8000
+                            "SpeedMin": 2000,
+                            "SpeedMax": 30000,
                         }
                     },
                     "FAN2": {

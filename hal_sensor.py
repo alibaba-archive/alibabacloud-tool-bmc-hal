@@ -44,10 +44,19 @@ class HalSensor(object):
                 "Inlet": "sensor_name_for_inlet_temp",
                 "Switch": "sensor_name_for_switch_temp"
             },
-            "DCDC_SENSORS": [
-                "DcdcInputVoltageName1",
-                "DcdcInputVoltageName2",
-                "DcdcInputVoltageName3"
+            "DCDC_SENSORS": {
+                "DcdcInputVoltageName1": {
+                    "Descr": "DCDC Input Voltage Name1 detailed description",
+                    "Name": "sensor_name_for_dcdc_sensor_name1"
+                },
+                "DcdcInputCurrentName2": {
+                    "Descr": "DCDC Input Current Name2 detailed description",
+                    "Name": "sensor_name_for_dcdc_sensor_name2"
+                },
+                "DcdcOutputVoltageName3": {
+                    "Descr": "DCDC Output Voltage Name3 detailed description",
+                    "Name": "sensor_name_for_dcdc_sensor_name3"
+                }
             }
         }
 
