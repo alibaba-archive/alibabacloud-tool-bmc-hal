@@ -9,8 +9,6 @@
 import json
 import os
 
-HAL_SENSOR_DEFAULT_CONFIG_FILE = "/etc/sensors_config.json"
-
 """
 class for HAL sensor APIs.
 
@@ -26,11 +24,32 @@ class for HAL sensor APIs.
 """
 
 
+HAL_PLATFORM_DIR = "/etc/openbmc/devices"
+HAL_SENSOR_CONFIG_NAME = "sensors_config.json"
+
+
 class HalSensor(object):
     def __init__(self):
-        self.config_file = HAL_SENSOR_DEFAULT_CONFIG_FILE
+        try:
+            misc = HalMisc()
+            if not misc:
+                msg = "Failed to instantiate HalMisc in HalSensor init"
+                raise Exception(msg)
+
+            plat_name = misc.get_platform_name()
+            if not plat_name or plat_name == "N/A":
+                msg = "Failed to get platform name in HalSensor init"
+                raise Exception(msg)
+
+            self.config_file = "/".join([HAL_PLATFORM_DIR, plat_name, \
+                                         HAL_SENSOR_CONFIG_NAME])
+        except Exception as e:
+            msg = "Get sensor file name got exception: %s" % str(e)
+            raise Exception(msg)
+
         if self.load_config() != 0:
-            raise Exception("Load config file %s failed" % self.config_file)
+            msg = "Load config %s failed: %s" % (self.config_file, str(e))
+            raise Exception(msg)
 
     def load_config(self, config_file=None):
         """
