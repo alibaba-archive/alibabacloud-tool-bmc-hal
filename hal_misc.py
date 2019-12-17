@@ -140,3 +140,13 @@ class HalMisc(object):
         @return platform name string, e.g. AS13-32H-F-$(VENDOR_NAME)
         """
         pass
+
+    def execute_command(self, cmd_str):
+        """
+        Excute user specified command string.
+
+        @param cmd_str command string from user
+
+        @return (0, outputs) for success, (-1, outputs) for failure.
+        """
+        pass
