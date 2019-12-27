@@ -186,6 +186,18 @@
            }
        }
 
+   5.5 /api/misc/biosbootstatus: map to hal_misc.HalMisc.get_bios_boot_status
+       GET:
+       Request param: None
+       Response.json():
+       {
+           # "status" and "message", both be "OK"
+           "data": {
+               "Flash": "master",
+               "Result": "success"
+           }
+       }
+
 6. Arbitrary commands
    6.1 /api/hw/rawcmd
        POST:
