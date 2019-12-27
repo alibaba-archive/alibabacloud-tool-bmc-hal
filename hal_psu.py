@@ -131,7 +131,7 @@ class HalPsu(object):
         """
         pass
 
-    def set_fan_speed_pwm(self, psu_name, pwm):
+    def set_psu_fan_speed_pwm(self, psu_name, pwm):
         """
         Set a specific PSU's fan's speed
 
