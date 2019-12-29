@@ -29,3 +29,27 @@ class HalDcdc(object):
                 sensor_dict[name] = dcdc_sensors[name]
 
         return sensor_dict
+
+    def get_dcdc_sensor_value(self, name):
+        """
+        Get DCDC sonsor.
+
+        @return voltage_dict for DCDC or None for failure
+        """
+        pass
+
+    def get_dcdc_sensor_descr(self, name):
+        """
+        Get DCDC sensor's description.
+
+        @return description string or None for failure
+        """
+        pass
+
+    def get_dcdc_all_info(self):
+        """
+        Get all DCDC sensor info
+
+        @return dict for all DCDC info or None for failure
+        """
+        pass
