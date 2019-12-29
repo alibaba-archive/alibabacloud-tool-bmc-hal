@@ -135,9 +135,17 @@ class HalPsu(object):
         """
         Set a specific PSU's fan's speed
 
-        @param pwm duty cycle, unit is 1%, -1 for failure
+        @param pwm duty cycle, unit is 1%
 
         @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_fan_speed_pwm(self, psu_name):
+        """
+        Get a specific PSU's fan's speed
+
+        @return pwm duty cycle, unit is 1%, -1 for failure
         """
         pass
 
@@ -152,6 +160,7 @@ class HalPsu(object):
                         "SN": "serial_number_example",  # 'N/A'
                         "PN": "part_number_example",    # 'N/A'
                         "AirFlow": "F2B",               # 'N/A'
+                        "Present": "yes"                # "no"
 
                         "FanSpeed": {
                             "Value": 4000,
