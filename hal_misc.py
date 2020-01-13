@@ -48,6 +48,36 @@ class HalMisc(object):
         """
         pass
 
+    def set_system_led(self, color, blink=False):
+        """
+        Set system LED color, system LED indicates status of the whole system
+
+        @param color The color of system fan LED, "green"/"yellow"/"off"
+        @param blink True for blinking, False for steady
+
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def system_power_led_available(self):
+        """
+        Get system power LED availability
+
+        @return True if available, False otherwise.
+        """
+        pass
+
+    def set_system_power_led(self, color, blink=False):
+        """
+        Set system power LED color, power LED indicates PSU, DC/DC status
+
+        @param color The color of system fan LED, "green"/"yellow"/"off"
+        @param blink True for blinking, False for steady
+
+        @return 0 for success, -1 for failure
+        """
+        pass
+
     def set_host_cpu_power(self, power_command):
         """
         Control host cpu power
