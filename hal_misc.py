@@ -171,6 +171,24 @@ class HalMisc(object):
         """
         pass
 
+    def get_sys_eeprom(self):
+        """
+        Get SYSEEPROM
+
+        @return SYSEEPROM content dict or None for failure.
+                example outputs:
+                {
+                    "Product Name": "AS23-128H",
+                    "Product Manufacturer": "Manufacturer Name",
+                    "Product Serial": "ABC0123456789",
+                    "Product Part Number": "P10-F0001-01"
+
+                    # Optional keys
+                }
+        @note value string should be "N/A" on read failure.
+        """
+        pass
+
     def execute_command(self, cmd_str):
         """
         Excute user specified command string.
