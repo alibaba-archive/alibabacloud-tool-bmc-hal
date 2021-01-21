@@ -198,3 +198,72 @@ class HalMisc(object):
         @return (0, outputs) for success, (-1, outputs) for failure.
         """
         pass
+
+    def enable_host_cpu_power_force_control(self, enable):
+        """
+        Force control host cpu power
+        @param enable: enable/disable force control host cpu power,
+                       enable: 1; disable: 0
+        @return 0 for success, -1 for failure
+
+        """
+        pass
+
+    def get_host_cpu_power_force_control_status(self):
+        """
+        Get force control host cpu power status
+        @return 1 for enable, 0 for disable, -1 for failure
+        """
+        pass
+
+    def set_switch_port_power_status(self, status):
+        """
+        Control switch port power
+        @param status: Control switch port power,
+                        should be “on”/“off”
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_switch_port_power_status(self):
+        """
+        Get switch port power status
+        @return switch port power status, value should be
+                        “on”/“off”, or “N/A” for failure
+        """
+        pass
+
+    def set_switch_chip_power_status(self, status):
+        """
+        Control switch chip power
+        @param status: Control switch chip power,
+                            should be “on”/“off”
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_switch_chip_power_status(self):
+        """
+        Get switch chip status
+        @return switch chip power status, value should be
+                            “on”/“off”, or “N/A” for failure
+        """
+        pass
+
+    def set_ssd_power_status(self, status):
+        """
+        Control SSD power
+        @param status: Control SSD power,
+                        should be “on”/“off”
+        @return 0 for success, -1 for failure
+        """
+        pass
+
+    def get_ssd_power_status(self):
+        """
+        Get SSD status
+        @return SSD power status, value should be
+                        “on”/“off”, or “N/A” for failure
+        """
+        pass
+
