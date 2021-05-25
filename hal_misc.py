@@ -27,6 +27,19 @@ class HalMisc(object):
                 }
         """
         pass
+    
+    def get_uboot_boot_status(self):
+        """
+        Get lastest U-Boot boot status, include boot_flash and result
+        
+        @return Dict of U-Boot boot status or None for failure
+            Example:
+            {
+                "Flash": "master",      # "slave" or 'N/A'
+                "Result": "success"     # "failed" or 'N/A'
+            }
+        """
+        pass
 
     def get_bmc_boot_status(self):
         """
