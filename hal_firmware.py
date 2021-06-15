@@ -44,6 +44,24 @@ class HalFirmware(object):
         """
         pass
 
+    def get_uboot_next_boot(self):
+        """
+        Get next booting flash of U-Boot
+
+        @return "master"/"slave" on success, "N/A" for failure
+        """
+        pass
+
+    def set_uboot_next_boot(self, flash):
+        """
+        Set flash from which next U-Boot boot
+
+        @param flash Booting flash of U-Boot, "master" or "slave"
+
+        @return 0 on success, -1 for failure
+        """
+        pass
+
     def program_bmc(self, flash, image):
         """
         Program BMC flash witch specific image
